@@ -1,16 +1,16 @@
 class Node:
     def __init__(self, data=None, node = None):
-        self.data = data
-        self.next = node
+        self._data = data
+        self._next = node
     def set_Data(self, Object):
-        self.data = Object
+        self._data = Object
     
     def set_Next(self, Node):
-        self.next = Node
+        self._next = Node
     
     def get_Data(self):
-        return self.data
+        return self._data
     
     def get_Next(self):
-        return self.next
+        return self._next
     
