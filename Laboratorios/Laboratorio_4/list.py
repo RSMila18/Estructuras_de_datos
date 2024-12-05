@@ -17,15 +17,19 @@ class List:
     def set_Size(self, size):
         self._size = size
 
-    def First(self):
+    def first(self):
+        if self.is_empty() == True:
+            raise ValueError("Lista vacia")
         return self._head
     
-    def Last(self):
+    def last(self):
+        if self.is_empty() == True:
+            raise ValueError("Lista vacia")
         return self._tail
 
     def add_First(self, data):
         new_node = Node(data)
-        if self._head is None:
+        if self.is_empty() == True:
             self._head = self.tail = new_node
         else:
             new_node._next = self.head
@@ -42,7 +46,7 @@ class List:
 
     def remove_First(self):
         if self.is_empty() == True:
-            raise ValueError("List is empty")
+            raise ValueError("Lista vacia")
         data = self.head.data
         self.head = self.head.next
         self.size -= 1
