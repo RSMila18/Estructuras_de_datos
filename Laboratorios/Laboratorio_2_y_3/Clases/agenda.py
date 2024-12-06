@@ -41,7 +41,7 @@ class Agenda:
 
         
     def toFile(self, filename='agenda.txt'):
-        full_path = "Laboratorio_2_y_3/Datos/" + filename 
+        full_path = "Laboratorios/Laboratorio_2_y_3/Datos/" + filename 
         with open(full_path, "w", encoding="utf-8") as archivo:
             for usuario in self.registro:
                 archivo.write(str(usuario) + "\n")
@@ -49,7 +49,7 @@ class Agenda:
 
     
     def import_Data(self, filename="agenda.txt"):
-        ruta = "Laboratorio_2_y_3/Datos/" + filename
+        ruta = "Laboratorios/Laboratorio_2_y_3/Datos/" + filename
         with open(ruta, "r", encoding="utf-8") as archivo:
             for linea in archivo:
                 linea = linea.strip()  # Eliminar saltos de línea o espacios extra

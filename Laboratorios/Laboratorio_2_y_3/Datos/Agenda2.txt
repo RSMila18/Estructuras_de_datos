@@ -1,5 +1,5 @@
 Jose Jose Ramirez Torres,435751178,02-04-1969,Medellin,3108025423,josejose@unal.edu.co,Calle 38D,45-07,La Candelaria,Medellin,Los Candelabros,213
-Sofia de Jesus Toro de Mejia,21366528,19-10-1942,Sabanalarga,3005785624,sofia42@gmail.com,Cra 66,111A-29,Boyaca,Medellín,Casa,Segundo Piso
+Sofia de Jesus Toro,25899756,19-10-1942,Sabanalarga,3005785624,sofia42@gmail.com,Cra 66,111A-29,Boyaca,Medellín,Casa,Segundo Piso
 Alejandro Zapata Lopez,1187426598,04-12-2002,Bogotá,3115876239,azapatal@unal.edu.co,Calle 42A,53-52,Robledo,Medellín,Bello Horizonte,402
 Carla Sanchez Moreno,1064428009,14-04-2000,Barrancabermeja,6045826345,csanchezmo@unal.edu.co,Circular Sur 42,12B-23,Laureles,Medellín,None,None
 None
