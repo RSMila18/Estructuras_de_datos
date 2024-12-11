@@ -50,7 +50,7 @@ class List:
     #    if self.is_Empty() == True:
     #       self._head = self._tail = new_node
     #    else:
-    #        self.tail.set_next(new_node)
+    #        self.tail.set_next = new_node
     #        self.tail = new_node
     #    self.size += 1
 
