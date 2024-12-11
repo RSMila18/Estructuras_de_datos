@@ -2,6 +2,7 @@ class Node:
     def __init__(self, data=None, node = None):
         self._data = data
         self._next = node
+        
     def set_Data(self, Object):
         self._data = Object
     
