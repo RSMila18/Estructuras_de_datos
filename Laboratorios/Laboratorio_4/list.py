@@ -1,4 +1,4 @@
-from Laboratorio_4.node import Node
+from Laboratorio_4.node import Node  #Esta vaina desde mi computador me sale malo :( 
 class List:
     def __init__(self, head = None, tail = None, size = 0):
         self._head = head
@@ -59,5 +59,5 @@ class List:
             raise ValueError("Lista vacia")
         data = self._head.get_Data()
         self._head = self._head.get_next()
-        self.size -= 1
+        self._size -= 1
         return data
