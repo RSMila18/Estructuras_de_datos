@@ -40,8 +40,8 @@ class DoubleList:
         if self.is_Empty() == True:
             self._head = self._tail = new_node
         else:
-            new_node.prev = self._tail
             self._tail.next = new_node
+            new_node.prev = self._tail
             self._tail = new_node
         self._size += 1
 
