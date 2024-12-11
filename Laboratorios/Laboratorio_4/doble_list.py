@@ -16,18 +16,18 @@ class DoubleList:
             return False
 
     def first(self):
-        if self.is_empty() == True:
+        if self.is_Empty() == True:
             raise ValueError("Lista vacia")
         return self._head
 
     def last(self):
-        if self.is_empty() == True:
+        if self.is_Empty() == True:
             raise ValueError("Lista vacia")
         return self._tail
 
     def add_first(self, data):
         new_node = DoubleNode(data)
-        if self.is_empty() == True:
+        if self.is_Empty() == True:
             self._head = self._tail = new_node
         else:
             new_node.next = self._head
@@ -37,7 +37,7 @@ class DoubleList:
 
     def add_last(self, data):
         new_node = DoubleNode(data)
-        if self.is_empty() == True:
+        if self.is_Empty() == True:
             self._head = self._tail = new_node
         else:
             new_node.prev = self._tail
@@ -46,7 +46,7 @@ class DoubleList:
         self._size += 1
 
     def remove_first(self):
-        if self.is_empty() == True:
+        if self.is_Empty() == True:
             raise ValueError("Lista vacia")
         removed_node = self._head
         if self._size == 1:  # Si hay solo un nodo
@@ -58,7 +58,7 @@ class DoubleList:
         return removed_node.data
 
     def remove_last(self):
-        if self.is_empty() == True:
+        if self.is_Empty() == True:
             raise ValueError("Lista vacia")
         removed_node = self._tail
         if self._size == 1:  # Si hay solo un nodo
@@ -70,7 +70,7 @@ class DoubleList:
         return removed_node.data
 
     def remove(self, node):
-        if self.is_empty() == True:
+        if self.is_Empty() == True:
             raise ValueError("Lista vacia")
         if node is self._head:
             return self.remove_first()
