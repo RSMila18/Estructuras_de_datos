@@ -1,4 +1,4 @@
-from Laboratorio_4.list import List
+from Laboratorio_4.lista_simple import List
 
 class OrdenadorLista:
     def __init__(self):
