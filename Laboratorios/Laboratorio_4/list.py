@@ -40,16 +40,6 @@ class List:
             self._tail.set_Next(new_node)
             self._tail = new_node
         self._size += 1 
-        
-    #No sería más bien: 
-    #def add_Last(self, data):
-    #    new_node = Node(data)
-    #    if self.is_Empty() == True:
-    #       self._head = self._tail = new_node                 ----------> En efecto, hay que cambiarlo, gracias por el aviso :D
-    #    else:
-    #        self.tail.set_next = new_node
-    #        self.tail = new_node
-    #    self.size += 1
 
     def remove_First(self):
         if self.is_Empty() == True:
