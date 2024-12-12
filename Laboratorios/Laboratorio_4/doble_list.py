@@ -108,3 +108,14 @@ class DoubleList:
             new_node.set_Next(node)
             node.set_Prev(new_node)
             self._size += 1
+            
+    def __str__(self):
+        if self.is_Empty() == True:
+            return "[]"
+        else:
+            node = self._head
+            elementos = []
+            while node is not None:
+                elementos.append(str(node.get_Data()))
+                node = node.get_Next()
+            return "[" + ",".join(elementos) + "]"    

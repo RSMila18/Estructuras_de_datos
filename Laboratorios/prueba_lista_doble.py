@@ -40,20 +40,20 @@ def crear_usuario():
     return Usuario(nombre, identificacion, fecha_nacimiento, ciudad_nacimiento, telefono, correo, direccion)
 
 # Insertar un usuario al principio
-print("\nInsertar un usuario al principio:")
+print("\nAgregar Usuario:")
 nuevo_usuario_inicio = crear_usuario()
 coleccion_usuarios.add_first(nuevo_usuario_inicio)
 
 # Insertar un usuario al final
-print("\nInsertar un usuario al final:")
+print("\nAgregar Usuario:")
 nuevo_usuario_final = crear_usuario()
 coleccion_usuarios.add_last(nuevo_usuario_final)
 
 # Mostrar usuarios después de las inserciones
-print("\nUsuarios después de insertar al principio y al final:")
 print(coleccion_usuarios)
+
 # Insertar un usuario después del tercer nodo
-print("\nInsertar un usuario después del tercer nodo:")
+print("\nAgregar Usuario:")
 nuevo_usuario_intermedio = crear_usuario()
 tercer_usuario = coleccion_usuarios.get_node_at(3)  # Obtener el nodo en la posición 3
 if tercer_usuario:
@@ -62,5 +62,4 @@ else:
     print("No hay suficientes nodos para insertar después del tercero.")
 
 # Mostrar usuarios finales
-print("\nUsuarios finales después de todas las inserciones:")
 print(coleccion_usuarios)

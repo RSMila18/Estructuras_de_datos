@@ -21,3 +21,6 @@ class DoubleNode:
     
     def get_Prev(self):
         return self._prev
+    
+    def __str__(self):
+        return self._data
