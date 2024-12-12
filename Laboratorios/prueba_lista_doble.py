@@ -1,5 +1,5 @@
-from Laboratorio_2_y_3.Clases.usuario import Usuario
 from Laboratorio_4.doble_list import DoubleList
+from Laboratorio_2_y_3.Clases.usuario import Usuario
 from Laboratorio_2_y_3.Clases.fecha import Fecha
 from Laboratorio_2_y_3.Clases.direccion import Direccion
 
@@ -18,6 +18,21 @@ for usuario in [usuario_1, usuario_2, usuario_3, usuario_4, usuario_5]:
 # Mostrar usuarios iniciales
 print("Usuarios iniciales:")
 print(coleccion_usuarios)
+
+def get_node_at(double_list, a):
+    if a < 0 or a >= double_list.size():
+        raise IndexError("Índice fuera de rango")
+    # Empezar desde el head o tail dependiendo de la posición
+    if a < double_list.size() // 2:
+        current = double_list._head
+        for _ in range(a):
+            current = current.get_Next()
+    else:
+        current = double_list._tail
+        for _ in range(double_list.size() - 1, (a-1), -1):
+            current = current.get_Prev()
+
+    return current
 
 # Función para crear un nuevo usuario
 def crear_usuario():
@@ -55,7 +70,7 @@ print(coleccion_usuarios)
 # Insertar un usuario después del tercer nodo
 print("\nAgregar Usuario:")
 nuevo_usuario_intermedio = crear_usuario()
-tercer_usuario = coleccion_usuarios.get_node_at(3)  # Obtener el nodo en la posición 3
+tercer_usuario = get_node_at(coleccion_usuarios,3)  # Obtener el nodo en la posición 3
 if tercer_usuario:
     coleccion_usuarios.add_after(tercer_usuario, nuevo_usuario_intermedio)
 else:
