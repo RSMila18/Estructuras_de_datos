@@ -1,7 +1,8 @@
-from Clases.usuario import Usuario
-from Clases.fecha import Fecha
-from Clases.direccion import Direccion
-from Clases.agenda import Agenda
+from Laboratorio_2_y_3.Clases.usuario import Usuario
+from Laboratorio_2_y_3.Clases.fecha import Fecha
+from Laboratorio_2_y_3.Clases.direccion import Direccion
+from Laboratorio_2_y_3.Clases.agenda import Agenda
+
 
 agenda = Agenda(5)
 

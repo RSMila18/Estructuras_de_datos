@@ -1,4 +1,4 @@
-from Clases.agenda import Agenda
+from Laboratorio_2_y_3.Clases.agenda import Agenda
 
 agenda = Agenda(5)
 agenda.import_Data("Agenda.txt")

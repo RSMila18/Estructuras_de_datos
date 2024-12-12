@@ -1,8 +1,8 @@
-from Laboratorios.Laboratorio_2_y_3.Clases.usuario import Usuario
-from Laboratorios.Laboratorio_2_y_3.Clases.agenda import Agenda
-from Laboratorios.Laboratorio_4.doble_list import DoubleList
-from Laboratorios.Laboratorio_2_y_3.Clases.fecha import Fecha
-from Laboratorios.Laboratorio_2_y_3.Clases.direccion import Direccion
+#from Laboratorio_4.doble_list import DoubleList
+from Laboratorio_2_y_3.Clases.usuario import Usuario
+from Laboratorio_2_y_3.Clases.agenda import Agenda
+from Laboratorio_2_y_3.Clases.fecha import Fecha
+from Laboratorio_2_y_3.Clases.direccion import Direccion
 
 agenda = Agenda(5)
 

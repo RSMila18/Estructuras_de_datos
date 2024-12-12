@@ -1,4 +1,4 @@
-from lista_simple import List
+from Laboratorio_4.lista_simple import List
 
 def remove(L,x):
     temp = L.first()
@@ -27,5 +27,3 @@ print(Almacen)
 print(remove(Almacen,1))
 print(remove(Almacen,10))
 print(remove(Almacen,20))
-
-
