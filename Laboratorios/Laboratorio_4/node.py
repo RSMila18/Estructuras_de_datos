@@ -15,3 +15,5 @@ class Node:
     def get_Next(self):
         return self._next
     
+    def __str__(self):
+        return self.data

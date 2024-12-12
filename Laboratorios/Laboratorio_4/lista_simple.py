@@ -1,4 +1,4 @@
-from Laboratorios.Laboratorio_4.node import Node
+from node import Node
 class List:
     def __init__(self, head = None, tail = None, size = 0):
         self._head = head
@@ -26,7 +26,7 @@ class List:
     def add_First(self, data):
         new_node = Node(data)
         if self.is_Empty() == True:
-            self._head = self.tail = new_node
+            self._head = self._tail = new_node
         else:
             new_node.set_Next(self._head)
             self._head = new_node
@@ -44,7 +44,7 @@ class List:
     def remove_First(self):
         if self.is_Empty() == True:
             removed_node = self._head
-            self._head = removed_node.getNext()
+            self._head = removed_node.get_Next()
             removed_node.set_Next(None)
             self._size -= 1
             return removed_node.get_Data()
