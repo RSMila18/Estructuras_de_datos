@@ -1,11 +1,11 @@
+import random
 class Ordenador:
     def __init__(self, capacity):
         self.A = [0] * capacity
         self.limit = capacity
 
     def inicializar(self):
-        for i in range(self.limit):
-            self.A[i] = (i * 37 + 11) % 100 + 1  # Genera números pseudoaleatorios
+        self.A = [random.randint(0, 100) for _ in range(self.limit)]  # Genera números pseudoaleatorios
 
     def ordenar_burbuja(self):
         for i in range(self.limit):
