@@ -63,7 +63,7 @@ class List:
             self._tail = anterior
             self._size -= 1
             return removed_node.get_Data()
-        
+    
     def __str__(self):
         if self.is_Empty() == True:
             return "[]"
