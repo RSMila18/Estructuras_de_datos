@@ -17,7 +17,7 @@ def remove(L,x):
         else:
             anterior = temp
             temp = temp.get_Next()
-    return f"No existe el valor {x} en esta lista:\n{L}"
+    return f"No existe el valor {x} en esta lista: {L}"
         
 Almacen = List()
 Almacen.add_First(2)
