@@ -18,13 +18,9 @@ class List:
         self._size = size
 
     def first(self):
-        if self.is_Empty() == True:
-            raise ValueError("Lista vacia")
         return self._head
     
     def last(self):
-        if self.is_Empty() == True:
-            raise ValueError("Lista vacia")
         return self._tail
 
     def add_First(self, data):
@@ -32,7 +28,7 @@ class List:
         if self.is_Empty() == True:
             self._head = self.tail = new_node
         else:
-            new_node._next = self._head
+            new_node.set_Next(self._head)
             self._head = new_node
         self._size += 1
 
@@ -40,7 +36,8 @@ class List:
         new_node = Node(data)
         if self.is_Empty() == True:
             self._head = self._tail = new_node  
-            self._tail._next = new_node  
+        else:
+            self._tail.set_Next(new_node)
             self._tail = new_node
         self._size += 1 
         
@@ -48,7 +45,7 @@ class List:
     #def add_Last(self, data):
     #    new_node = Node(data)
     #    if self.is_Empty() == True:
-    #       self._head = self._tail = new_node
+    #       self._head = self._tail = new_node                 ----------> En efecto, hay que cambiarlo, gracias por el aviso :D
     #    else:
     #        self.tail.set_next = new_node
     #        self.tail = new_node
@@ -56,8 +53,23 @@ class List:
 
     def remove_First(self):
         if self.is_Empty() == True:
-            raise ValueError("Lista vacia")
-        data = self._head.get_Data()
-        self._head = self._head.get_next()
-        self._size -= 1
-        return data
+           removed_node = self._head
+           self._head = removed_node.getNext()
+           removed_node.set_Next(None)
+           self._size -= 1
+           return removed_node.get_Data()
+        else:
+            return None
+    
+    def remove_Last(self):
+        if self._size == 1:
+            return self.remove_First()
+        else:
+            removed_node = self._tail
+            anterior = self._head
+            while anterior.get_Next()!= self._tail:
+                anterior = anterior.get_Next()
+            anterior.set_Next(None)
+            self._tail = anterior
+            self._size -= 1
+            return removed_node.get_Data()

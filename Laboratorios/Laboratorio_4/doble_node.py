@@ -7,11 +7,11 @@ class DoubleNode:
     def set_Data(self, object_):
         self._data = object_
     
-    def set_Next(self, DoubleNode):
-        self._next = DoubleNode
+    def set_Next(self, doubleNode):
+        self._next = doubleNode
 
-    def set_Prev(self, DoubleNode):
-        self._prev = DoubleNode
+    def set_Prev(self, doubleNode):
+        self._prev = doubleNode
     
     def get_Data(self):
         return self._data
