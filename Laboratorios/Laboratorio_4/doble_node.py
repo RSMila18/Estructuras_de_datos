@@ -19,5 +19,5 @@ class DoubleNode:
     def get_Next(self):
         return self._next
     
-    def get_prev(self):
+    def get_Prev(self):
         return self._prev

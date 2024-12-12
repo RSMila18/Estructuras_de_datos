@@ -30,8 +30,8 @@ class DoubleList:
         if self.is_Empty() == True:
             self._head = self._tail = new_node
         else:
-            new_node.next = self._head
-            self._head.prev = new_node
+            new_node.set_Next(self._head)
+            self._head.set_Prev(new_node)
             self._head = new_node
         self._size += 1
 
@@ -40,70 +40,71 @@ class DoubleList:
         if self.is_Empty() == True:
             self._head = self._tail = new_node
         else:
-            self._tail.next = new_node
-            new_node.prev = self._tail
+            self._tail.set_Next(new_node)
+            new_node.set_Prev(self._tail)
             self._tail = new_node
         self._size += 1
 
     def remove_first(self):
         if self.is_Empty() == True:
-            raise ValueError("Lista vacia")
-        removed_node = self._head
-        if self._size == 1:  # Si hay solo un nodo
-            self._head = self._tail = None
+            return None
         else:
-            self._head = self._head.next
-            self._head.prev = None
-        self._size -= 1
-        return removed_node.data
+            removed_node = self._head
+            self._head = removed_node.get_Next()
+            removed_node.set_Next(None)
+            self._head.set_Prev(None)
+            self._size -= 1
+    
+            return removed_node.get_Data()
 
     def remove_last(self):
         if self.is_Empty() == True:
-            raise ValueError("Lista vacia")
-        removed_node = self._tail
-        if self._size == 1:  # Si hay solo un nodo
-            self._head = self._tail = None
+            return None
         else:
-            self._tail = self._tail.prev
-            self._tail.next = None
-        self._size -= 1
-        return removed_node.data
+            removed_node = self._tail
+            self._tail = removed_node.get_Prev()
+            self._tail.set_Next(None)
+            self._tail.set_Prev(None)
+            self._size -= 1
+            return removed_node.get_Data()
 
     def remove(self, node):
         if self.is_Empty() == True:
-            raise ValueError("Lista vacia")
-        if node is self._head:
+            return None
+        elif node is self._head:
             return self.remove_first()
         elif node is self._tail:
             return self.remove_last()
         else:
-            node.prev.next = node.next
-            node.next.prev = node.prev
-            self._size -= 1
-            return node.data
+            removed_node = node.get_Data()
+            p = removed_node.get_Prev()
+            nx = removed_node.get_Next()
+            p.set_Next(nx)
+            nx.set_Prev(p)
+            removed_node.set_Nex(None)
+            removed_node.set_Prev(None)
+            return removed_node.get_Data()
 
     def add_after(self, node, data):
-        if node is None:
-            raise ValueError("El nodo de referencia no puede ser None")
-        if node is self._tail:  # Si es el último nodo
+        if node is self._tail:
             self.add_last(data)
         else:
             new_node = DoubleNode(data)
-            new_node.next = node.next
-            new_node.prev = node
-            node.next.prev = new_node
-            node.next = new_node
+            nx = node.get_Next()
+            node.set_Next(new_node)
+            new_node.set_Prev(node)
+            new_node.set_Next(nx)
+            nx.set_Prev(new_node)
             self._size += 1
 
     def add_before(self, node, data):
-        if node is None:
-            raise ValueError("El nodo de referencia no puede ser None")
-        if node is self._head:  # Si es el primer nodo
+        if node is self._head:
             self.add_first(data)
         else:
             new_node = DoubleNode(data)
-            new_node.next = node
-            new_node.prev = node.prev
-            node.prev.next = new_node
-            node.prev = new_node
+            p = node.get_Prev()
+            p.set_Prev(new_node)
+            new_node.set_Prev(p)
+            new_node.set_Next(node)
+            node.set_Prev(new_node)
             self._size += 1
