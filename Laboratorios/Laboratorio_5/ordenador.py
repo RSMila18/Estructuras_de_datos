@@ -1,11 +1,13 @@
 import random
+
 class Ordenador:
+
     def __init__(self, capacity):
         self.A = [0] * capacity
         self.limit = capacity
 
     def inicializar(self):
-        self.A = [random.randint(0, 100) for _ in range(self.limit)]  # Genera números pseudoaleatorios
+        self.A = [random.randint(0, 100) for _ in range(self.limit)]  # Genera un número aleatorio entre 0 y 100
 
     def ordenar_burbuja(self):
         for i in range(self.limit):
@@ -41,8 +43,7 @@ class Ordenador:
         def merge(arr, left, mid, right):
             n1 = mid - left + 1
             n2 = right - mid
-
-            # Crear subarreglos
+            
             L = [arr[left + i] for i in range(n1)]
             R = [arr[mid + 1 + j] for j in range(n2)]
 

@@ -2,7 +2,9 @@ from Laboratorio_4.doble_list import DoubleList
 from Laboratorio_2_y_3.Clases.usuario import Usuario
 from Laboratorio_2_y_3.Clases.direccion import Direccion
 from Laboratorio_2_y_3.Clases.fecha import Fecha
+
 class OrdenadorAgenda:
+
     def __init__(self):
         self.L = DoubleList()
         
@@ -19,14 +21,10 @@ class OrdenadorAgenda:
         if self.L.is_Empty():
             raise ValueError("La lista está vacía. No se puede ordenar.")
         n = self.L.size()
-
         # Aplicar el algoritmo Bubble Sort
         for i in range(n):
-            # Inicializar punteros
             nodo_actual = self.L.first()
             nodo_siguiente = nodo_actual.get_Next()
-
-            # Recorrer la lista hasta el penúltimo nodo de la iteración
             for j in range(n - 1 - i):
                 # Comparar los datos (en este caso, por cédula/ID)
                 if nodo_actual.get_Data().get_id() > nodo_siguiente.get_Data().get_id():
@@ -34,14 +32,8 @@ class OrdenadorAgenda:
                     temp_data = nodo_actual.get_Data()
                     nodo_actual.set_Data(nodo_siguiente.get_Data())
                     nodo_siguiente.set_Data(temp_data)
-
-                # Avanzar los punteros
                 nodo_actual = nodo_siguiente
                 nodo_siguiente = nodo_siguiente.get_Next()
-
-
-
-
 
     def mostrar(self):
         print(self.L)
