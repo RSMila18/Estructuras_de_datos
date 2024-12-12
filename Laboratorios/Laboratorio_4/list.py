@@ -53,11 +53,11 @@ class List:
 
     def remove_First(self):
         if self.is_Empty() == True:
-           removed_node = self._head
-           self._head = removed_node.getNext()
-           removed_node.set_Next(None)
-           self._size -= 1
-           return removed_node.get_Data()
+            removed_node = self._head
+            self._head = removed_node.getNext()
+            removed_node.set_Next(None)
+            self._size -= 1
+            return removed_node.get_Data()
         else:
             return None
     
