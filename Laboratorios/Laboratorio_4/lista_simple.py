@@ -63,3 +63,14 @@ class List:
             self._tail = anterior
             self._size -= 1
             return removed_node.get_Data()
+        
+    def __str__(self):
+        if self.is_Empty() == True:
+            return "[]"
+        else:
+            node = self._head
+            elementos = []
+            while node is not None:
+                elementos.append(str(node.get_Data()))
+                node = node.get_Next()
+            return "[" + ",".join(elementos) + "]"
