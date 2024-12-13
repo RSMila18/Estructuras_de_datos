@@ -15,8 +15,11 @@ usuario_5 = Usuario("Carla Sanchez Moreno", 1064428009, Fecha("14", "04", "2000"
 for usuario in [usuario_1, usuario_2, usuario_3, usuario_4, usuario_5]:
     agenda.agregar(usuario)
 
-ident = 435751178
+ident = 1187426598
 bus = agenda.buscar(ident)
+if bus == -1:
+    print("No exite este usuario en la agenda")
+else:
+    print(f"el usuario con id: {ident} se encuentra en la posicion {bus} de la base de datos")
 
 agenda.toFile("Agenda.txt")
-print(f"el usuario con id: {ident} se encuentra en la posicion {bus} de la base de datos")
