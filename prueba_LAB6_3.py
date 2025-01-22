@@ -20,4 +20,4 @@ turno_usuario.toFile()
 turno_usuario.atenderSiguiente()
 turno_usuario.atenderSiguiente()
 
-turno_usuario.toFile(filename='usuariospendientes.txt', filename2='usuariosatendidos.txt')
+turno_usuario.toFile()
