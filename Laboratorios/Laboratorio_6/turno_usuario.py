@@ -1,5 +1,5 @@
-from Laboratorio_6.stack import Stack
-from Laboratorio_6.queue import Queue
+from Laboratorios.Laboratorio_6.stack import Stack
+from Laboratorios.Laboratorio_6.queue import Queue
 from Laboratorios.Laboratorio_2_y_3.Clases.usuario import Usuario
 
 class TurnoUsuario:
