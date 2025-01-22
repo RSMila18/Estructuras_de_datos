@@ -18,7 +18,7 @@ class List:
         self._size = size
 
     def first(self):
-        return self._head
+        return self._head._data
     
     def last(self):
         return self._tail
@@ -42,7 +42,7 @@ class List:
         self._size += 1 
 
     def remove_First(self):
-        if self.is_Empty() == True:
+        if self.is_Empty() == False:
             removed_node = self._head
             self._head = removed_node.get_Next()
             removed_node.set_Next(None)

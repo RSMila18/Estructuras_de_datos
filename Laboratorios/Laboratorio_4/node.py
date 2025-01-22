@@ -16,4 +16,4 @@ class Node:
         return self._next
     
     def __str__(self):
-        return self.data
+        return self._data
