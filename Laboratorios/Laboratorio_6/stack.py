@@ -26,6 +26,3 @@ class Stack:
             return None
         else:
             return self.data.first()
-        
-    def __str__(self):
-        return self.data.__str__()
