@@ -1,7 +1,7 @@
-from Laboratorios.Laboratorio_2_y_3.Clases.usuario import Usuario
-from Laboratorios.Laboratorio_2_y_3.Clases.fecha import Fecha
-from Laboratorios.Laboratorio_2_y_3.Clases.direccion import Direccion
-from Laboratorios.Laboratorio_6.turno_usuario import TurnoUsuario
+from Laboratorio_2_y_3.Clases.usuario import Usuario
+from Laboratorio_2_y_3.Clases.fecha import Fecha
+from Laboratorio_2_y_3.Clases.direccion import Direccion
+from Laboratorio_6.turno_usuario import TurnoUsuario
 
 usuario_1 = Usuario("Jose Jose Ramirez Torres", 435751178, Fecha("02","04","1969"), "Medellin", 3108025423,"josejose@unal.edu.co", Direccion("Calle 38D", "45-07","La Candelaria", "Medellin", "Los Candelabros", "213"))
 usuario_2 = Usuario("Sofia de Jesus Toro", 25899756, Fecha("19","10", "1942"), "Sabanalarga", 3005785624, "sofia42@gmail.com", Direccion("Cra 66", "111A-29", "Boyaca", "Medellín", "Casa", "Segundo Piso"))

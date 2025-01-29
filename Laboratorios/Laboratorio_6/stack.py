@@ -1,4 +1,4 @@
-from Laboratorios.Laboratorio_4.lista_simple import List
+from Laboratorio_4.lista_simple import List
 
 class Stack:
     def __init__(self):
