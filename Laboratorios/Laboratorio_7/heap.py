@@ -32,7 +32,7 @@ class Heap:
             temp = self.arr[i]
             self.arr[i] = self.arr[largest]
             self.arr[largest] = temp
-            self.max_heapify(self.arr, largest, size)
+            self.max_heapify(largest, size)
 
     def build_max_heap(self):
         for i in range(self.size // 2 - 1 , -1, -1):
