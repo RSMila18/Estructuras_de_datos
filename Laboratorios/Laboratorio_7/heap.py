@@ -39,14 +39,16 @@ class Heap:
             self.max_heapify(i, self.size)
 
     def heap_sort(self):
+        heap_size = self.size
         self.build_max_heap()
-        for i in range(self.size - 1, 0, -1):
+        for i in range(heap_size - 1, 0, -1):
             temp = self.arr[i]
             self.arr[i] = self.arr[0]
             self.arr[0] = temp
             self.size -= 1
             self.max_heapify(0, self.size)
-            
+        self.size = heap_size
+    
     def insert(self, key):
         if self.size >= self.capacity:
             raise Exception("Capacidad máxima alcanzada.")

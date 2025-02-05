@@ -4,13 +4,19 @@ import random
 heap = Heap(6)
 heap.arr = [random.randint(0, 100) for _ in range(5)] + [None]
 heap.size = 5
-print(heap.arr)
-
-heap.build_max_heap()
-print(heap.arr)
-
-heap.insert(8)
-print(heap.arr)
+print( f'Arreglo: {heap.arr}')
 
 heap.heap_sort()
-print(heap.arr)
+print( f'Arreglo luego de heap_sort(): {heap.arr}')
+
+
+heap.build_max_heap()
+print( f'Arreglo construido con max heap: {heap.arr}')
+
+heap.insert(8)
+print( f'Arreglo luego de insertar un elemento: {heap.arr}')
+print('Extrayendo los elementos de mayor a menor:')
+while heap.size > 0:
+    max_ = heap.extract_max()
+    print(max_)
+
