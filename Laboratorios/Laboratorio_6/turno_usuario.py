@@ -1,7 +1,7 @@
 from Laboratorio_6.stack import Stack
 from Laboratorio_6.queue import Queue
 from Laboratorio_2_y_3.Clases.usuario import Usuario
-
+import os
 class TurnoUsuario:
     def __init__(self):
         self.registro = Queue()
@@ -21,7 +21,8 @@ class TurnoUsuario:
             return "El usuario ha sido atendido"
         
     def toFile(self, filename='usuariospendientes.txt', filename2='usuariosatendidos.txt'):
-        full_path = "Laboratorios/Laboratorio_2_y_3/Datos/" + filename 
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        full_path = os.path.join(current_dir, "Datos_2", filename)
         with open(full_path, "w", encoding="utf-8") as archivo:
             current = self.registro.data._head
             while current:
@@ -29,7 +30,7 @@ class TurnoUsuario:
                 archivo.write(f"{usuario.get_nombre()}, {usuario.get_id()}\n")
                 current = current.get_Next()
                 
-        full_path = "Laboratorios/Laboratorio_2_y_3/Datos/" + filename2 
+        full_path = os.path.join(current_dir, "Datos_2", filename2)
         with open(full_path, "w", encoding="utf-8") as archivo:        
             current = self.usuarioAtendido.data._head
             while current:

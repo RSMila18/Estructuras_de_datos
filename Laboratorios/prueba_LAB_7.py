@@ -13,6 +13,9 @@ print( f'Arreglo luego de heap_sort(): {heap.arr}')
 heap.build_max_heap()
 print( f'Arreglo construido con max heap: {heap.arr}')
 
+m = heap.heap_maximun()
+print(f'El máximo es: {m}')
+
 heap.insert(8)
 print( f'Arreglo luego de insertar un elemento: {heap.arr}')
 print('Extrayendo los elementos de mayor a menor:')
