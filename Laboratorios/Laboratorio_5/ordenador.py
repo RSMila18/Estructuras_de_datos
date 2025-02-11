@@ -12,7 +12,7 @@ class Ordenador:
     def ordenar_burbuja(self):
         for i in range(self.limit):
             for j in range(1, self.limit - i):
-                if self.A[j - 1] > self.A[j]:
+                 if self.A[j - 1] > self.A[j]:
                     self.A[j - 1], self.A[j] = self.A[j], self.A[j - 1]
 
     def ordenar_seleccion(self):
