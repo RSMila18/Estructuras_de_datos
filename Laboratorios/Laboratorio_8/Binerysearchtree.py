@@ -1,11 +1,12 @@
-from Laboratorio_8.BSTEntry import BSTEntry
+from .BSTEntry import BSTEntry
+
 class BinarySearchTree:
     #Clase que implementa un Árbol Binario de Búsqueda.
     def __init__(self):
         self.root = None
 
     def insertar(self, key, value):
-        #Inserta un nuevo nodo en el árbol binario de búsqueda."""
+       
         new_node = BSTEntry(key, value)
         if self.root is None:
             self.root = new_node
@@ -25,7 +26,7 @@ class BinarySearchTree:
                 self.insertar_recursivo(current.right, new_node)
 
     def Buscar(self, key):
-        #Busca un nodo en el árbol dado una clave."""
+        
         return self.Busqueda_recursiva(self.root, key)
 
     def Busqueda_recursiva(self, current, key):
@@ -36,8 +37,8 @@ class BinarySearchTree:
         return self.Busqueda_recursiva(current.right, key)
 
     def Eliminar(self, key):
-        #Elimina un nodo del árbol dada una clave."""
-        self.root = self._delete_recursive(self.root, key)
+       
+        self.root = self.Eliminacion_recursiva(self.root, key)
 
     def Eliminacion_recursiva(self, current, key):
         if current is None:
@@ -63,7 +64,7 @@ class BinarySearchTree:
         return current
 
     def get_min(self):
-        #Obtiene el nodo con la clave más pequeña."""
+       
         if self.root is None:
             return None
         return self._get_min(self.root).value
@@ -74,7 +75,7 @@ class BinarySearchTree:
         return current
 
     def get_max(self):
-        #Obtiene el nodo con la clave más grande."""
+        
         if self.root is None:
             return None
         current = self.root
@@ -83,9 +84,9 @@ class BinarySearchTree:
         return current.value
 
     def Recorrido_Inorder(self):
-        """Realiza el recorrido inorder del árbol y muestra las claves."""
+        
         keys = []
-        self._inorder_recursive(self.root, keys)
+        self.Recorrido_Inorder_recursivo(self.root, keys)
         print("Recorrido inorder:", keys)
 
     def Recorrido_Inorder_recursivo(self, current, keys):
@@ -95,7 +96,7 @@ class BinarySearchTree:
             self.Recorrido_Inorder_recursivo(current.right, keys)
 
     def Mostrar_Arbol(self, node=None, level=0, prefix="Root: "):
-        """Muestra visualmente el árbol."""
+        
         if node is None:
             node = self.root
         if node is not None:
@@ -106,6 +107,3 @@ class BinarySearchTree:
                 self.Mostrar_Arbol(node.right, level + 1, "R--- ")
 
 
-# Función auxiliar para calcular la clave
-def calcular_clave(identificacion):
-    return sum(int(digit) for digit in str(identificacion))
