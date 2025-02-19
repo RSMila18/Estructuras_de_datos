@@ -1,52 +1,51 @@
-from Laboratorios import BSTEntry
-
+from Laboratorio_8.BSTEntry import BSTEntry
 class BinarySearchTree:
     #Clase que implementa un Árbol Binario de Búsqueda.
     def __init__(self):
         self.root = None
 
-    def insert(self, key, value):
+    def insertar(self, key, value):
         #Inserta un nuevo nodo en el árbol binario de búsqueda."""
         new_node = BSTEntry(key, value)
         if self.root is None:
             self.root = new_node
         else:
-            self._insert_recursive(self.root, new_node)
+            self.insertar_recursivo(self.root, new_node)
 
-    def _insert_recursive(self, current, new_node):
+    def insertar_recursivo(self, current, new_node):
         if new_node.key < current.key:
             if current.left is None:
                 current.left = new_node
             else:
-                self._insert_recursive(current.left, new_node)
+                self.insertar_recursivo(current.left, new_node)
         else:
             if current.right is None:
                 current.right = new_node
             else:
-                self._insert_recursive(current.right, new_node)
+                self.insertar_recursivo(current.right, new_node)
 
-    def search(self, key):
+    def Buscar(self, key):
         #Busca un nodo en el árbol dado una clave."""
-        return self._search_recursive(self.root, key)
+        return self.Busqueda_recursiva(self.root, key)
 
-    def _search_recursive(self, current, key):
+    def Busqueda_recursiva(self, current, key):
         if current is None or current.key == key:
             return current
         if key < current.key:
-            return self._search_recursive(current.left, key)
-        return self._search_recursive(current.right, key)
+            return self.Busqueda_recursiva(current.left, key)
+        return self.Busqueda_recursiva(current.right, key)
 
-    def delete(self, key):
+    def Eliminar(self, key):
         #Elimina un nodo del árbol dada una clave."""
         self.root = self._delete_recursive(self.root, key)
 
-    def _delete_recursive(self, current, key):
+    def Eliminacion_recursiva(self, current, key):
         if current is None:
             return current
         if key < current.key:
-            current.left = self._delete_recursive(current.left, key)
+            current.left = self.Eliminacion_recursiva(current.left, key)
         elif key > current.key:
-            current.right = self._delete_recursive(current.right, key)
+            current.right = self.Eliminacion_recursiva(current.right, key)
         else:
             # Caso 1: Nodo sin hijos
             if current.left is None and current.right is None:
@@ -60,7 +59,7 @@ class BinarySearchTree:
             min_larger_node = self._get_min(current.right)
             current.key = min_larger_node.key
             current.value = min_larger_node.value
-            current.right = self._delete_recursive(current.right, min_larger_node.key)
+            current.right = self.Eliminacion_recursiva(current.right, min_larger_node.key)
         return current
 
     def get_min(self):
@@ -83,28 +82,28 @@ class BinarySearchTree:
             current = current.right
         return current.value
 
-    def inorder_traversal(self):
+    def Recorrido_Inorder(self):
         """Realiza el recorrido inorder del árbol y muestra las claves."""
         keys = []
         self._inorder_recursive(self.root, keys)
         print("Recorrido inorder:", keys)
 
-    def _inorder_recursive(self, current, keys):
+    def Recorrido_Inorder_recursivo(self, current, keys):
         if current:
-            self._inorder_recursive(current.left, keys)
+            self.Recorrido_Inorder_recursivo(current.left, keys)
             keys.append(current.key)
-            self._inorder_recursive(current.right, keys)
+            self.Recorrido_Inorder_recursivo(current.right, keys)
 
-    def display_tree(self, node=None, level=0, prefix="Root: "):
+    def Mostrar_Arbol(self, node=None, level=0, prefix="Root: "):
         """Muestra visualmente el árbol."""
         if node is None:
             node = self.root
         if node is not None:
             print(" " * (level * 4) + prefix + f"({node.key}, {node.value})")
             if node.left:
-                self.display_tree(node.left, level + 1, "L--- ")
+                self.Mostrar_Arbol(node.left, level + 1, "L--- ")
             if node.right:
-                self.display_tree(node.right, level + 1, "R--- ")
+                self.Mostrar_Arbol(node.right, level + 1, "R--- ")
 
 
 # Función auxiliar para calcular la clave
