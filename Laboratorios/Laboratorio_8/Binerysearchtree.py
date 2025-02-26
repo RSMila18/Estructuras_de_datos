@@ -1,7 +1,7 @@
 from .BSTEntry import BSTEntry
 
 class BinarySearchTree:
-    #Clase que implementa un Árbol Binario de Búsqueda.
+    
     def __init__(self):
         self.root = None
 
